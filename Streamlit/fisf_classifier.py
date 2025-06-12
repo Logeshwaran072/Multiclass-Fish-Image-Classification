@@ -7,10 +7,12 @@ import time
 
 st.set_page_config(page_title="Fish Classification", page_icon="🐟", layout="wide")
 
+
+ model_path = "mobilenet_update_fish_classifier.h5"
 # Load the trained MobileNet model
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model("D:/Project/Multiclass_project/Model/mobilenet_update_fish_classifier.h5")
+    model = tf.keras.models.load_model(model_path)
     return model
 
 model = load_model()
